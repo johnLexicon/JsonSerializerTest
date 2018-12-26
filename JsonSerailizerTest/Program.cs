@@ -25,9 +25,21 @@ namespace JsonSerailizerTest
                 return obj;
             }));
 
-            Console.WriteLine(array);
+            //Console.WriteLine(array);
+            string json = array.ToString();
 
+            JArray a = JArray.Parse(json);
 
+            Vehicle c = null;
+            foreach (var item in a)
+            {
+                Console.WriteLine(item.First.First);
+                if (item.First.First.ToString().Equals("Car"))
+                {
+                    c = JsonConvert.DeserializeObject<Car>(item.ToString());
+                    Console.WriteLine(c);
+                }
+            }
             //var obj = JObject.FromObject(car);
             //obj.AddFirst(new JProperty("Type", nameof(car)));
 
