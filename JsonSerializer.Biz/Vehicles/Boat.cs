@@ -1,4 +1,4 @@
-﻿namespace JsonSerailizerTest.Vehicles
+﻿namespace JsonSerializer.Biz.Vehicles
 {
     public class Boat : Vehicle
     {

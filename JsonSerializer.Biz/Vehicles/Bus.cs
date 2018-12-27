@@ -1,5 +1,5 @@
 ﻿using System;
-namespace JsonSerailizerTest.Vehicles
+namespace JsonSerializer.Biz.Vehicles
 {
     public class Bus : Vehicle
     {

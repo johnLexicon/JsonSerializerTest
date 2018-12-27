@@ -1,7 +1,9 @@
 ﻿
-namespace JsonSerailizerTest.Vehicles
-{
+using System;
 
+namespace JsonSerializer.Biz.Vehicles
+{
+    [Serializable]
     public abstract class Vehicle
     {
         private string regNr;

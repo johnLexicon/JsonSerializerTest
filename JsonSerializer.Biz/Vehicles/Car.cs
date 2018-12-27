@@ -1,6 +1,7 @@
 ﻿using System;
-namespace JsonSerailizerTest.Vehicles
+namespace JsonSerializer.Biz.Vehicles
 {
+    [Serializable]
     public class Car : Vehicle
     {
         private string fuelType;
