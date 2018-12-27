@@ -2,6 +2,7 @@
 
 namespace JsonSerializer.Biz.Vehicles
 {
+    [Serializable]
     public class Airplane : Vehicle
     {
 

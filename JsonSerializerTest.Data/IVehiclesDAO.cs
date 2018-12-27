@@ -7,5 +7,7 @@ namespace JsonSerializerTest.Data
     {
         void SaveVehicle(Vehicle vehicle);
         Vehicle RetrieveVehicle();
+        void SaveAllVehicles(Vehicle[] vehicles);
+        Vehicle[] RetrieveAllVehicles();
     }
 }

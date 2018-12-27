@@ -12,12 +12,21 @@ namespace JsonSerailizerTest
         static void Main(string[] args)
         {
             Vehicle car = new Car("ABC123", "Green", 4, "Diesel");
-            //Vehicle airplane = new Airplane("FFF123", "Blue", 2, 4);
-            //Vehicle boat = new Boat("BBB345", "Black", 0, 450);
-            //Vehicle bus = new Bus("BUS098", "red", 8, 89);
-            //Vehicle motorcycle = new Motorcycle("MMM", "Orange", 2, 450);
+            Vehicle airplane = new Airplane("FFF123", "Blue", 2, 4);
+            Vehicle boat = new Boat("BBB345", "Black", 0, 450);
+            Vehicle bus = new Bus("BUS098", "red", 8, 89);
+            Vehicle motorcycle = new Motorcycle("MMM012", "Orange", 2, 450);
 
-            //Vehicle[] vehicles = { car, airplane, boat, bus, motorcycle };
+            Vehicle[] vehicles = { car, airplane, boat, bus, motorcycle };
+
+            IVehiclesDAO vehiclesDAO = new VehiclesBinary();
+            vehiclesDAO.SaveAllVehicles(vehicles);
+
+            Vehicle[] binVehicles = vehiclesDAO.RetrieveAllVehicles();
+            foreach (var item in binVehicles)
+            {
+                Console.WriteLine(item);
+            }
 
             //JArray array = new JArray(vehicles.Select(v =>
             //{
@@ -41,11 +50,11 @@ namespace JsonSerailizerTest
             //    }
             //}
 
-            IVehiclesDAO vehiclesDAO = new VehiclesBinary();
-            vehiclesDAO.SaveVehicle(car);
+            //IVehiclesDAO vehiclesDAO = new VehiclesBinary();
+            //vehiclesDAO.SaveVehicle(car);
 
-            Vehicle binCar = vehiclesDAO.RetrieveVehicle();
-            Console.WriteLine(binCar);
+            //Vehicle binCar = vehiclesDAO.RetrieveVehicle();
+            //Console.WriteLine(binCar);
 
             //var obj = JObject.FromObject(car);
             //obj.AddFirst(new JProperty("Type", nameof(car)));

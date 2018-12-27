@@ -1,5 +1,8 @@
-﻿namespace JsonSerializer.Biz.Vehicles
+﻿using System;
+
+namespace JsonSerializer.Biz.Vehicles
 {
+    [Serializable]
     public class Boat : Vehicle
     {
         private short length;
